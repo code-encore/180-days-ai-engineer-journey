@@ -1,0 +1,115 @@
+#Day 1 - Python Fundamentals Practice
+
+Problem 1: Data Types
+- Store student information using different data types
+
+name = "Anuz"
+age = 21
+cgpa = 8.2
+is_student = True
+
+print("Name:", name)
+print("Age:", age)
+print("CGPA:", cgpa)
+print("Student:", is_student)
+
+Problem 2: List Operations
+
+skills = ["Python", "Machine Learning", "SQL"]
+
+skills.append("NumPy")
+
+print("\nSkills List:")
+print(skills)
+
+print("First Skill:", skills[0])
+print("Total Skills:", len(skills))
+
+Problem 3: Dictionary Operations
+
+student = {
+"name": "Anuj",
+"branch": "Mechanical Engineering",
+"goal": "AI Engineer"
+}
+
+print("\nStudent Information:")
+print(student)
+
+print("Branch:", student["branch"])
+
+Problem 4: Operators
+
+a = 15
+b = 4
+
+print("\nArithmetic Operators")
+print("Addition:", a + b)
+print("Subtraction:", a - b)
+print("Multiplication:", a * b)
+print("Division:", a / b)
+print("Modulus:", a % b)
+
+Problem 5: Control Flow (if-else)
+
+marks = 78
+
+print("\nGrade Evaluation")
+
+if marks >= 90:
+print("Grade A")
+elif marks >= 75:
+print("Grade B")
+elif marks >= 60:
+print("Grade C")
+else:
+print("Need Improvement")
+
+#Problem 6: For Loop
+
+print("\nNumbers from 1 to 5")
+
+for i in range(1, 6):
+print(i)
+
+#Problem 7: While Loop
+
+print("\nCountdown")
+
+count = 5
+
+while count > 0:
+print(count)
+count -= 1
+
+#Problem 8: Find Even Numbers
+
+print("\nEven Numbers Between 1 and 20")
+
+for num in range(1, 21):
+if num % 2 == 0:
+print(num)
+
+#Problem 9: Sum of List Elements
+
+numbers = [10, 20, 30, 40, 50]
+
+total = 0
+
+for num in numbers:
+total += num
+
+print("\nSum of Numbers:", total)
+
+# Problem 10: Student Skill Tracker
+
+student_skills = {
+"Python": True,
+"SQL": False,
+"Machine Learning": False
+}
+
+print("\nLearning Progress")
+
+for skill, status in student_skills.items():
+print(skill, ":", status)
