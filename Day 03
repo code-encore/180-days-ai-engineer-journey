@@ -1,0 +1,33 @@
+Data Standardization
+What is it?
+
+Data Standardization scales features so they have:
+
+Mean = 0
+Standard Deviation = 1
+
+# example 
+
+from sklearn.preprocessing import StandardScaler
+import pandas as pd
+
+data = pd.DataFrame({
+    'Age': [18, 25, 30, 40, 50]
+})
+
+scaler = StandardScaler()
+data['Age_Standardized'] = scaler.fit_transform(data[['Age']])
+
+print(data)
+
+
+#  Where to Collect Data for Machine Learning?
+
+
+Popular Data Sources
+Platform	              Purpose
+Kaggle	                Datasets & Competitions
+UCI ML Repository	      Academic datasets
+Google Dataset Search 	Search engine for datasets
+Data.gov	Government    datasets
+GitHub	Open-source     datasets
