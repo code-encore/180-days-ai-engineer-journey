@@ -1,0 +1,63 @@
+Label Encoding
+What is Label Encoding?
+
+Label Encoding converts categorical values into numerical values so that machine learning algorithms can process them.
+
+
+#example 
+
+from sklearn.preprocessing import LabelEncoder
+import pandas as pd
+
+data = pd.DataFrame({
+    'Gender': ['Male', 'Female', 'Male', 'Female']
+})
+
+encoder = LabelEncoder()
+data['Gender_Encoded'] = encoder.fit_transform(data['Gender'])
+
+print(data)
+
+
+#  Train-Test Split
+What is Train-Test Split?
+
+Train-Test Split divides a dataset into:
+
+Training Set → Used to train the model.
+Testing Set → Used to evaluate the model.
+
+
+#example
+
+from sklearn.model_selection import train_test_split
+import pandas as pd
+
+data = pd.DataFrame({
+    'Age': [18, 22, 25, 30, 35, 40],
+    'Purchased': [0, 1, 0, 1, 1, 0]
+})
+
+X = data[['Age']]
+y = data['Purchased']
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
+
+print("Training Samples:", len(X_train))
+print("Testing Samples:", len(X_test))
+
+# Handling Imbalanced Datasets
+What is an Imbalanced Dataset?
+
+from imblearn.over_sampling import SMOTE
+
+X = [[1],[2],[3],[4],[5],[6]]
+y = [0,0,0,0,0,1]
+
+smote = SMOTE()
+X_resampled, y_resampled = smote.fit_resample(X, y)
+
+print("Original Class Distribution:", y)
+print("Balanced Class Distribution:", y_resampled)
