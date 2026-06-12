@@ -1,0 +1,68 @@
+Feature Extraction of Text Data using TF-IDF Vectorizer
+What is TF-IDF?
+
+TF-IDF (Term Frequency-Inverse Document Frequency) converts text into numerical features by measuring the importance of words within a collection of documents.
+
+#example 
+
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+documents = [
+    "Machine learning is awesome",
+    "Machine learning uses data",
+    "Data science and machine learning"
+]
+
+vectorizer = TfidfVectorizer()
+
+X = vectorizer.fit_transform(documents)
+
+print(vectorizer.get_feature_names_out())
+print(X.toarray())
+
+## Numerical Dataset Pre-Processing
+What is Numerical Data Pre-Processing?
+
+Preparing numerical features by:
+
+Handling missing values
+Feature scaling
+Data transformation
+
+
+# example 
+import pandas as pd
+from sklearn.impute import SimpleImputer
+from sklearn.preprocessing import StandardScaler
+
+data = pd.DataFrame({
+    'Age': [25, 30, None, 40, 35]
+})
+
+# Handle Missing Values
+imputer = SimpleImputer(strategy='mean')
+data['Age'] = imputer.fit_transform(data[['Age']])
+
+# Standardization
+scaler = StandardScaler()
+data['Age'] = scaler.fit_transform(data[['Age']])
+
+print(data)
+
+# Text Dataset Pre-Processing
+What is Text Pre-Processing?
+
+Text data often contains noise and inconsistencies. Pre-processing helps clean and standardize text before feature extraction.
+
+#example 
+import re
+
+text = "Machine Learning is AMAZING!!!"
+
+# Convert to lowercase
+text = text.lower()
+
+# Remove special characters
+text = re.sub(r'[^a-zA-Z\s]', '', text)
+
+print(text)
